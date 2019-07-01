@@ -10,8 +10,8 @@ def main():
     df_json["filesystems"] = []
     for row in range(1, df_num_lines):
         df_json["filesystems"].append(df_to_json(df_array[row]))
-        print json.dumps(df_json, sort_keys=True, indent=2)
-        return
+    print json.dumps(df_json, sort_keys=True, indent=2)
+    return
 
 def df_to_json(tokenList):
     result = {}
@@ -27,7 +27,7 @@ def df_to_json(tokenList):
     result["filesystem"]["used"] = fsUsed
     result["filesystem"]["Avail"] = fsAvail
     result["filesystem"]["use%"] = fsUse
-    result["filesystem"]["mount_point"] = fsMountPoint
+    result["filesystem"]["mounted_on"] = fsMountPoint
     return result
 
 if __name__ == '__main__':
